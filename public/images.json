@@ -1,0 +1,62 @@
+[
+    { 
+        "id": 1, 
+        "src": "../assets/sample/cars.png", 
+        "thumbnail": "../assets/sample/cars.png", 
+        "alt": "image1" 
+    },
+    { 
+        "id": 2, 
+        "src": "../assets/sample/cars2.jpg", 
+        "thumbnail": "../assets/sample/cars2.jpg", 
+        "alt": "image2" 
+    },
+    { 
+        "id": 3, 
+        "src": "../assets/sample/cars3.jpg", 
+        "thumbnail": "../assets/sample/cars3.jpg", 
+        "alt": "image3" 
+    },
+    { 
+        "id": 4, 
+        "src": "../assets/sample/cars4.jpg", 
+        "thumbnail": "../assets/sample/cars4.jpg", 
+        "alt": "image4" 
+    },
+    { 
+        "id": 5, 
+        "src": "../assets/sample/cars5.jpg", 
+        "thumbnail": "../assets/sample/cars5.jpg", 
+        "alt": "image5" 
+    },
+    { 
+        "id": 6, 
+        "src": "../assets/sample/cars6.jpg", 
+        "thumbnail": "../assets/sample/cars6.jpg", 
+        "alt": "image6" 
+    },
+    { 
+        "id": 7, 
+        "src": "../assets/sample/cars7.jpg", 
+        "thumbnail": "../assets/sample/cars7.jpg", 
+        "alt": "image7" 
+    },
+    { 
+        "id": 8, 
+        "src": "../assets/sample/cars8.jpg", 
+        "thumbnail": "../assets/sample/cars8.jpg", 
+        "alt": "image8" 
+    },
+    { 
+        "id": 9, 
+        "src": "../assets/sample/cars9.jpg", 
+        "thumbnail": "../assets/sample/cars9.jpg",
+        "alt": "image9" 
+    },
+    { 
+        "id": 10, 
+        "src": "../assets/sample/cars10.jpg", 
+        "thumbnail": "../assets/sample/cars10.jpg", 
+        "alt": "image10" 
+    }
+]

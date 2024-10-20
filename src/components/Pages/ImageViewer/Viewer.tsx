@@ -13,6 +13,7 @@ const images: Image[] = [
   { id: 2, src: require('../../../assets/sample/cars2.jpg'), thumbnail: require('../../../assets/sample/cars2.jpg'), alt: 'image2' },
   { id: 3, src: require('../../../assets/sample/cars3.jpg'), thumbnail: require('../../../assets/sample/cars3.jpg'), alt: 'image3' },
   { id: 4, src: require('../../../assets/sample/cars4.jpg'), thumbnail: require('../../../assets/sample/cars4.jpg'), alt: 'image4' },
+  { id: 10, src: require('../../../assets/sample/cars10.jpg'), thumbnail: require('../../../assets/sample/cars10.jpg'), alt: 'image10' },
   { id: 5, src: require('../../../assets/sample/cars5.jpg'), thumbnail: require('../../../assets/sample/cars5.jpg'), alt: 'image5' },
   { id: 6, src: require('../../../assets/sample/cars6.jpg'), thumbnail: require('../../../assets/sample/cars6.jpg'), alt: 'image6' },
   { id: 7, src: require('../../../assets/sample/cars7.jpg'), thumbnail: require('../../../assets/sample/cars7.jpg'), alt: 'image7' },
@@ -51,8 +52,8 @@ const Viewer: React.FC = () => {
       <p className='text-3xl font-semibold'>Carousel</p>
       <div className='w-[50rem] ml-[4rem] p-10 flex flex-col items-center justify-center gap-[2rem]'>
         {/* Display selected image */}
-        <div className='w-[50rem] flex items-center justify-center'>
-          <img src={selectedImage} alt="Selected Car" className='rounded-xl w-full h-[25rem]' />
+        <div className='w-[50rem] flex items-center justify-center border-2 bg-[#E1E1E1] rounded-2xl py-2'>
+          <img src={selectedImage} alt="Selected Car" className='rounded-xl h-[25rem]' />
         </div>
         {/* Thumbnail Swiper */}
         <div ref={thumbnailRef} className="flex no-scrollbar overflow-x-auto gap-2 mb-4 w-[50rem] h-[6rem] items-center justify-start px-2">
