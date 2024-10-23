@@ -28,15 +28,15 @@ const Viewer: React.FC = () => {
   const thumbnailRef = useRef<HTMLDivElement>(null);
   const { mode } = useThemeContext();
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prevSelected) => (prevSelected + 1) % images.length);
-    }, 3000);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     setCurrent((prevSelected) => (prevSelected + 1) % images.length);
+  //   }, 3000);
 
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
+  //   return () => {
+  //     clearInterval(timer);
+  //   };
+  // }, []);
 
   useEffect(() => {
     setSelectedImage(images[current].src);
