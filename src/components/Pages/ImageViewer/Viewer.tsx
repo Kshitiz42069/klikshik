@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import LazyLoad from 'react-lazyload';
+import { useThemeContext } from '../../Theme/ThemeProviderContext';
 
 interface Image {
   id: number;
@@ -13,18 +14,19 @@ const images: Image[] = [
   { id: 2, src: require('../../../assets/sample/cars2.jpg'), thumbnail: require('../../../assets/sample/cars2.jpg'), alt: 'image2' },
   { id: 3, src: require('../../../assets/sample/cars3.jpg'), thumbnail: require('../../../assets/sample/cars3.jpg'), alt: 'image3' },
   { id: 4, src: require('../../../assets/sample/cars4.jpg'), thumbnail: require('../../../assets/sample/cars4.jpg'), alt: 'image4' },
-  { id: 10, src: require('../../../assets/sample/cars10.jpg'), thumbnail: require('../../../assets/sample/cars10.jpg'), alt: 'image10' },
   { id: 5, src: require('../../../assets/sample/cars5.jpg'), thumbnail: require('../../../assets/sample/cars5.jpg'), alt: 'image5' },
   { id: 6, src: require('../../../assets/sample/cars6.jpg'), thumbnail: require('../../../assets/sample/cars6.jpg'), alt: 'image6' },
   { id: 7, src: require('../../../assets/sample/cars7.jpg'), thumbnail: require('../../../assets/sample/cars7.jpg'), alt: 'image7' },
   { id: 8, src: require('../../../assets/sample/cars8.jpg'), thumbnail: require('../../../assets/sample/cars8.jpg'), alt: 'image8' },
   { id: 9, src: require('../../../assets/sample/cars9.jpg'), thumbnail: require('../../../assets/sample/cars9.jpg'), alt: 'image9' },
+  { id: 10, src: require('../../../assets/sample/cars10.jpg'), thumbnail: require('../../../assets/sample/cars10.jpg'), alt: 'image10' },
 ];
 
 const Viewer: React.FC = () => {
   const [selectedImage, setSelectedImage] = React.useState<string>(images[0].src);
   const [current, setCurrent] = React.useState<number>(0);
   const thumbnailRef = useRef<HTMLDivElement>(null);
+  const { mode } = useThemeContext();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -47,13 +49,18 @@ const Viewer: React.FC = () => {
     }
   }, [current]);
 
+  const backgroundColor = mode === 'dark' ? '#252423' : '#F3F2F1';
+  const borderColor = mode === 'dark' ? '#3B3A39' : '#E1E1E1';
+
   return (
-    <div className='bg-white h-full rounded-xl p-8'>
-      <p className='text-3xl font-semibold'>Carousel</p>
-      <div className='w-[50rem] ml-[4rem] p-10 flex flex-col items-center justify-center gap-[2rem]'>
+    <div className="h-full rounded-xl p-8" style={{ backgroundColor }}>
+      <p className="text-3xl font-semibold">Carousel</p>
+      <div className="w-[50rem] ml-[4rem] p-10 flex flex-col items-center justify-center gap-[2rem]">
         {/* Display selected image */}
-        <div className='w-[50rem] flex items-center justify-center border-2 bg-[#E1E1E1] rounded-2xl py-2'>
-          <img src={selectedImage} alt="Selected Car" className='rounded-xl h-[25rem]' />
+        <div className="w-[50rem] flex items-center justify-center border-2 rounded-2xl py-2"
+          style={{ borderColor }}
+        >
+          <img src={selectedImage} alt="Selected Car" className="rounded-xl h-[25rem]" />
         </div>
         {/* Thumbnail Swiper */}
         <div ref={thumbnailRef} className="flex no-scrollbar overflow-x-auto gap-2 mb-4 w-[50rem] h-[6rem] items-center justify-start px-2">
